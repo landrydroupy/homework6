@@ -2,19 +2,25 @@
 <html>  
  <h1> Landry Droupy - Homework 6 </h1>
 
- <head>   
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">  
- </script>  
- <script type="text/javascript" language="javascript">  
- $(document).ready(function() {  
- $("p").css("background-color", "green");  
- });  
- </script>  
- </head>  
-<body>  
-<h2> Using JQuery </h2>
-<p>This paragraph tag will appear selected due to the jquery function with CSS functionality.</p>   
-</body>  
+ 
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#p1").hover(function(){
+    alert("You are hovering over the P tag !");
+  },
+  function(){
+    alert("Exited P Tag!");
+  }); 
+});
+</script>
+</head>
+<body>
+
+<p id="p1">Hover over this Paragraph!</p>
+
+</body>
 
 
 

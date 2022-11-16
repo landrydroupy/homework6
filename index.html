@@ -29,22 +29,55 @@
  
  
    <body>
-   <head>
- <h2> This output is from the Lodash library that takes the first and last output from an array </h2>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
-    <script type="text/javascript">
-  // Lodash first and last array elements
-        words = ['sky', 'wood', 'forest', 'falcon',
-            'pear', 'ocean', 'universe'
-        ];
+   <script>
+export default {
+  data() {
+    return {
+      message: 'Hello World!'
+    }
+  },
+  methods: {
+    reverseMessage() {
+      this.message = this.message.split('').reverse().join('')
+    },
+    notify() {
+      alert('navigation was prevented.')
+    }
+  }
+}
+</script>
 
-        let fel = _.first(words);
-        let lel = _.last(words);
+<template>
+  <!--
+    Note we don't need .value inside templates because
+    refs are automatically "unwrapped" in templates.
+  -->
+  <h1>{{ message }}</h1>
 
-        console.log(`First element: ${fel}`);
-        console.log(`Last element: ${lel}`);
-    </script>
-</head>
+  <!--
+    Bind to a method/function.
+    The @click syntax is short for v-on:click.
+  -->
+  <button @click="reverseMessage">Reverse Message</button>
+
+  <!-- Can also be an inline expression statement -->
+  <button @click="message += '!'">Append "!"</button>
+
+  <!--
+    Vue also provides modifiers for common tasks
+    such as e.preventDefault() and e.stopPropagation()
+  -->
+  <a href="https://vuejs.org" @click.prevent="notify">
+    A link with e.preventDefault()
+  </a>
+</template>
+
+<style>
+button, a {
+  display: block;
+  margin-bottom: 1em;
+}
+</style>
 </body>
   
 
